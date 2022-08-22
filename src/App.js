@@ -9,17 +9,23 @@ import {
 } from 'react-share';
 import './App.css';
 import HelmetMetaData from './Helmet';
-import HelmetMeta from './HelmetMeta';
 
 function App(props) {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    },5000)
+  },[])
+
+  if(isLoading) {
+    return <p>Loading...</p>
+  }
+
   return (
     <div className="App">
-       <HelmetMetaData
-        title={"abc"}
-        quote="test abc"
-        hashtag="hashtag123"
-        image="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
-      />
+      
       {/* <HelmetMeta /> */}
       <div className="">
       <p className="font-weight-bold">このソーシャルを共有する</p>
