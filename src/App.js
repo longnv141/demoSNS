@@ -14,13 +14,13 @@ import HelmetMeta from './HelmetMeta';
 function App(props) {
   return (
     <div className="App">
-       {/* <HelmetMetaData
+       <HelmetMetaData
         title={"abc"}
         quote="test abc"
         hashtag="hashtag123"
         image="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
-      /> */}
-      <HelmetMeta />
+      />
+      {/* <HelmetMeta /> */}
       <div className="">
       <p className="font-weight-bold">このソーシャルを共有する</p>
       <div 
