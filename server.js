@@ -43,24 +43,46 @@
 //   console.log(`Server is listening on port ${PORT}`)
 // })
 
-const path = require("path")
-const express = require("express")
-const app = express()
-const fs = require("fs")
-//
-const pathToIndex = path.join(__dirname, "build/index.html")
-app.get("/", (req, res) => {
-  const raw = fs.readFileSync(pathToIndex)
-  const pageTitle = "Homepage - Welcome to my page"
-  const updated = raw.replace("__PAGE_META__", `<title>${pageTitle}</title>`)
-  res.send(updated)
-})
-//
-app.use(express.static(path.join(__dirname, "build")))
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "build/index.html"))
-)
-const port = process.env.PORT || 5500
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`)
-})
+const express = require('express');
+const path = require('path');
+const fs = require("fs"); 
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+const indexPath  = path.resolve(__dirname, './build', 'index.html');
+
+// here we serve the index.html page
+app.get('/', (req, res, next) => {
+    fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+        if (err) {
+            console.error('Error during file reading', err);
+            return res.status(404).end()
+        }
+        // get post info
+
+        // inject meta tags
+        htmlData = htmlData.replace(
+            "<title>React App</title>",
+            `<title>title-abc1</title>`
+        )
+        .replace(/__META_OG_TITLE__/g, "title-test")
+        .replace(/__META_OG_DESCRIPTION__/g, "description-test")
+        .replace(/__META_DESCRIPTION__/g, "description-test")
+        .replace(/__META_OG_IMAGE__/g, "https://www.w3schools.com/w3css/img_lights.jpg")
+
+        console.log(htmlData, "dtat");
+        return res.send(htmlData);
+    });
+});
+// static resources should just be served as they are
+app.use(express.static(
+  path.resolve(__dirname, './build'),
+  { maxAge: '30d' },
+));
+// listening...
+app.listen(PORT, (error) => {
+    if (error) {
+        return console.log('Error during app startup', error);
+    }
+    console.log("listening on " + PORT + "...");
+});

@@ -10,6 +10,7 @@ import {
 import './App.css';
 import HelmetMetaData from './Helmet';
 import DocumentMeta from 'react-document-meta';
+import { Helmet } from 'react-helmet';
 
 const meta = {
   title: 'Some Meta Title',
@@ -23,20 +24,13 @@ const meta = {
   }
 };
 function App(props) {
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 5000)
-  }, [])
-
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-
   return (
     <div className="App">
+       {/* <Helmet>
+        <title>{`${"Client Title"}`}</title>
+        <meta name="description" content={`${"Client Content"}`} />
+        <meta property="image" content={'https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG'} />
+    </Helmet> */}
       {/* <DocumentMeta {...meta}> */}
         <h1>Hello World!</h1>
         {/* <HelmetMeta /> */}
