@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@architect/sandbox": "^5.3.3",
     "nodemon": "^2.0.19"
   }
 }
