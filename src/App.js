@@ -37,7 +37,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <DocumentMeta {...meta}>
+      {/* <DocumentMeta {...meta}> */}
         <h1>Hello World!</h1>
         {/* <HelmetMeta /> */}
         <div className="">
@@ -51,7 +51,7 @@ function App(props) {
             className="d-flex align-items-center justify-content-around"
           >
             <FacebookShareButton
-              url={"https://demo-sns-longnv141.vercel.app/"}
+              url={window.location.href}
               quote={props?.quote}
               hashtag={props?.hashtag}
             >
@@ -73,7 +73,7 @@ function App(props) {
             </TwitterShareButton>
           </div>
         </div>
-      </DocumentMeta>
+      {/* </DocumentMeta> */}
     </div>
   );
 }
