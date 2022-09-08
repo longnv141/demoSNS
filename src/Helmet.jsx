@@ -38,7 +38,6 @@ export default function HelmetMetaData(props) {
       <meta property="og:quote" content={quote} />
       <meta property="og:hashtag" content={hashtag} />
       <meta property="og:image" content={image} />
-      <meta content="image/*" property="og:image:type" />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content="Blush" />
       <meta property="og:description" content={description} />
