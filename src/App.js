@@ -40,8 +40,8 @@ function App(props) {
           >
             <FacebookShareButton
               url={window.location.href}
-              quote={props?.quote}
-              hashtag={props?.hashtag}
+              quote={"test abc"}
+              hashtag={"test ss2"}
             >
               <FacebookIcon size={48} borderRadius={32} />
             </FacebookShareButton>
