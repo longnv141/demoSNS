@@ -26,12 +26,6 @@ const meta = {
 function App(props) {
   return (
     <div className="App">
-       {/* <Helmet>
-        <title>{`${"Client Title"}`}</title>
-        <meta name="description" content={`${"Client Content"}`} />
-        <meta property="image" content={'https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG'} />
-    </Helmet> */}
-      {/* <DocumentMeta {...meta}> */}
         <h1>Hello World!</h1>
         {/* <HelmetMeta /> */}
         <div className="">
