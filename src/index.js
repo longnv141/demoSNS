@@ -8,7 +8,6 @@ import HelmetMetaData from './Helmet';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HelmetMetaData />
     <App />
   </React.StrictMode>
 );
