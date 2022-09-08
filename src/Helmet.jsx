@@ -26,12 +26,12 @@ export default function HelmetMetaData(props) {
       <title>{title}</title>
       <meta charset="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta property="type" content="website" />
-      <meta property="url" content={url} />
-      <meta property="title" content={title} />
-      <meta property="quote" content={quote} />
+      <meta name="type" content="website" />
+      <meta name="url" content={url} />
+      <meta name="title" content={title} />
+      <meta name="quote" content={quote} />
       <meta name="description" content={description} />
-      <meta property="image" content={image} />
+      <meta name="image" content={image} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
