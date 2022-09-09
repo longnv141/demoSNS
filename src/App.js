@@ -26,7 +26,7 @@ const meta = {
 function App(props) {
   return (
     <div className="App">
-      <HelmetMetaData />
+      {/* <HelmetMetaData /> */}
       <h1>Hello World!</h1>
       {/* <HelmetMeta /> */}
       <div className="">
